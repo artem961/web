@@ -5,8 +5,8 @@ class Plane {
 
         this.gridColor = '#D0D0D0';
         this.axisColor = '#000000';
-        this.zoneColor = "rgb(50, 50, 150)";
-        this.textColor = '#009000';
+        this.zoneColor = '#4967c8';
+        this.textColor = '#000000';
 
         this.width = canvas.width;
         this.height = canvas.height;
@@ -111,7 +111,7 @@ class Plane {
         let hR = this.heightR;
         let shift = 10;
         this.context.fillStyle = this.textColor;
-        this.context.font = '16px Arial';
+        this.context.font = '18px Arial';
 
         let labels = [
             new Label(new Position(shift, hR), String(R)),

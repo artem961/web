@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>lab1</title>
 
+    <link rel="stylesheet" href="../css/colors.css">
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
 <table class="main-table">
     <tr>
         <td colspan="3">
-            <header class="light-text">
+            <header class="primary-text">
                 <h1>Лабараторная работа №1</h1>
                 <h3>Храбров Артём Алексеевич Р3215</h3>
                 <h3>Вариант 467944</h3>
@@ -19,7 +20,83 @@
     </tr>
     <tr>
         <td class="canvas-column">
-            <canvas id="canvas" width="400" height="400"></canvas>
+            <div id="canvas-container">
+                <canvas id="canvas" width="400" height="400"></canvas>
+            </div>
+            <div id="r-container">
+                <div class="label primary-text">R</div>
+                <div id="r-group" class="r-group">
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="r" id="r1" value="1" checked>
+                            <label for="r1" class="checkbox-item">
+                                <span class="custom-checkbox"></span>
+                                <span class="label-text">1</span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" name="r" id="r1_5" value="1.5">
+                            <label for="r1_5" class="checkbox-item">
+                                <span class="custom-checkbox"></span>
+                                <span class="label-text">1.5</span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" name="r" id="r2" value="2">
+                            <label for="r2" class="checkbox-item">
+                                <span class="custom-checkbox"></span>
+                                <span class="label-text">2</span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" name="r" id="r2_5" value="2.5">
+                            <label for="r2_5" class="checkbox-item">
+                                <span class="custom-checkbox"></span>
+                                <span class="label-text">2.5</span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" name="r" id="r3" value="3">
+                            <label for="r3" class="checkbox-item">
+                                <span class="custom-checkbox"></span>
+                                <span class="label-text">3</span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" name="r" id="r5" value="5">
+                            <label for="r5" class="checkbox-item">
+                                <span class="custom-checkbox"></span>
+                                <span class="label-text">5</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </td>
+        <td class="table-column">
+            <div class="table-wrapper">
+                <table class="table" id="results">
+                    <thead class="primary-text">
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>R</th>
+                        <th>Результат</th>
+                        <th>Время выполнения</th>
+                        <th>Время</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
         </td>
         <td class="menu-column">
             <table class="menu">
@@ -63,44 +140,11 @@
                         </div>
                     </td>
                     <td class="label dark-text">
-                         Y
+                        Y
                     </td>
                     <td id="y-group" class="y-group">
                         <input type="text" id="y" name="y" value="0">
                         <label for="y"></label>
-                    </td>
-                </tr>
-                <tr>
-                    <td  class="label dark-text">
-                        R
-                    </td>
-                    <td id="r-group" class="r-group light-text">
-                        <ul>
-                            <li>
-                                <input type="checkbox" name="r" id="r1" value="1" checked>
-                                <label for="r1">1</label>
-                            </li>
-
-                            <li>
-                                <input type="checkbox" name="r" id="r1_5" value="1.5">
-                                <label for="r1_5">1.5</label>
-                            </li>
-
-                            <li>
-                                <input type="checkbox" name="r" id="r2" value="2">
-                                <label for="r2">2</label>
-                            </li>
-
-                            <li>
-                                <input type="checkbox" name="r" id="r2_5" value="2.5">
-                                <label for="r2_5">2.5</label>
-                            </li>
-
-                            <li>
-                                <input type="checkbox" name="r" id="r3" value="3">
-                                <label for="r3">3</label>
-                            </li>
-                        </ul>
                     </td>
                 </tr>
                 <tr>
@@ -109,25 +153,6 @@
                     </td>
                 </tr>
             </table>
-        </td>
-        <td class="table-column">
-            <div class="table-wrapper">
-                <table class="table light-text" id="results">
-                    <thead class="dark-text">
-                    <tr>
-                        <th>X</th>
-                        <th>Y</th>
-                        <th>R</th>
-                        <th>Результат</th>
-                        <th>Время выполнения</th>
-                        <th>Время</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-
         </td>
     </tr>
 

@@ -56,7 +56,8 @@ function showTooltip(text) {
 }
 
 async function sendRequest(x, y, r) {
-    let response = await fetch(`http://localhost:8080/calc?x=${x}&y=${y}&r=${r}`);
+    const api = 'http://localhost:8080/fcgi-bin/server.jar';
+    let response = await fetch(`${api}/calc?x=${x}&y=${y}&r=${r}`);
 
     if (response.ok) {
         return response.json();

@@ -36,14 +36,20 @@ public class Main {
                     Long endTime = System.nanoTime();
 
 
-                    String jsonResult = new StandartCalcResult(result,
+                    String jsonResult = new StandartCalcResult(
+                            x,
+                            y,
+                            r,
+                            result,
                             String.valueOf(endTime - startTime),
-                            String.valueOf(LocalTime.now()))
+                            String.valueOf(LocalTime.now().withNano(0)))
                             .toJson();
                     sendJsonResponse(StatusCode.OK, jsonResult);
                 }
             } catch (ServerException e) {
                 sendError(e);
+            } catch (Exception e) {
+                sendError(new ServerException(StatusCode.INTERNAL_SERVER_ERROR, e.getMessage()));
             }
         }
     }

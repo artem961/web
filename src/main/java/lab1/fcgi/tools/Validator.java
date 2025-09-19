@@ -25,6 +25,8 @@ public class Validator {
             return Double.parseDouble(number);
         } catch (NumberFormatException e) {
             throw new ServerException(StatusCode.BAD_REQUEST, "Значение " + number + " не является числом!");
+        } catch (NullPointerException e){
+            throw new ServerException(StatusCode.BAD_REQUEST, "Ожидались параметры x, y, r");
         }
     }
 }

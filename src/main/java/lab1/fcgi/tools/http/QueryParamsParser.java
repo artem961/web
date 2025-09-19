@@ -8,11 +8,15 @@ public class QueryParamsParser {
     public static Map<String, String> parseQueryParams(String queryString) {
         List<String> params = List.of(queryString.split("&"));
         Map<String, String> result = new HashMap<>();
-        params.forEach(param -> {
-           String[] split = param.split("=");
-           result.put(split[0], split[1]);
-        });
 
-        return result;
+        try {
+            params.forEach(param -> {
+                String[] split = param.split("=");
+                result.put(split[0], split[1]);
+            });
+            return result;
+        } catch (IndexOutOfBoundsException e) {
+            throw new ServerException(StatusCode.BAD_REQUEST, "Invalid query string");
+        }
     }
 }

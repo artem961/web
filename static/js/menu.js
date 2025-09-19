@@ -26,12 +26,20 @@ submitButton.addEventListener('click', () => {
     if (!validateNumberInString(y)) {
         showTooltip("Введите целое или дробное число!");
     } else {
+        let json = sendRequest(x, y, r);
 
+        json
+            .then(data => {
+                addTableRow(data);
+            })
+            .catch(err => {
+                alert(err)
+            })
     }
 });
 
 function validateNumberInString(string) {
-    return /^[0-9]+([.|,][0-9]+)?$/.test(string);
+    return /^[0-9]+([.][0-9]+)?$/.test(string);
 }
 
 
@@ -45,4 +53,39 @@ function showTooltip(text) {
         tooltip.style.display = 'none';
     }, 5000);
 
+}
+
+async function sendRequest(x, y, r) {
+    let response = await fetch(`http://localhost:8080/calc?x=${x}&y=${y}&r=${r}`);
+
+    if (response.ok) {
+        return response.json();
+    } else {
+        alert(`HTTP Error! ${response.message}`);
+    }
+}
+
+function addTableRow(data) {
+
+    let x = data.x;
+    let y = data.y;
+    let r = data.r;
+    let res = data.result;
+    let time = data.time;
+    let currentTime = data.currentTime;
+
+    const table = document.getElementById("results").getElementsByTagName('tbody')[0];
+    const row = table.insertRow();
+    addCell(row, x);
+    addCell(row, y);
+    addCell(row, r);
+    addCell(row, res);
+    addCell(row, time);
+    addCell(row, currentTime);
+}
+
+function addCell(row, value) {
+    const newCell = row.insertCell();
+    const newText = document.createTextNode(value);
+    newCell.appendChild(newText);
 }

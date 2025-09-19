@@ -5,7 +5,7 @@ class Plane {
 
         this.gridColor = '#D0D0D0';
         this.axisColor = '#000000';
-        this.zoneColor = '#4967c8';
+        this.zoneColor = 'rgba(73,103,200,0.5)';
         this.textColor = '#000000';
 
         this.width = canvas.width;

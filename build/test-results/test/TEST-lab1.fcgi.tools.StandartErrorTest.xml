@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="lab1.fcgi.tools.StandartErrorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-17T21:27:09.085Z" hostname="GIGACHAD-228" time="0.1">
+  <properties/>
+  <testcase name="jsonOutputTest()" classname="lab1.fcgi.tools.StandartErrorTest" time="0.1"/>
+  <system-out><![CDATA[{"message":"you are stupid monkey","statusCode":200}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

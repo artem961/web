@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <title>lab1</title>
 
-    <link rel="stylesheet" href="../css/colors.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <table class="main-table">
     <tr>
         <td colspan="3">
             <header class="primary-text">
-                <h1>Лабараторная работа №1</h1>
+                <h1>Лабораторная работа №1</h1>
                 <h3>Храбров Артём Алексеевич Р3215</h3>
                 <h3>Вариант 467944</h3>
             </header>
@@ -96,69 +96,68 @@
                     </tbody>
                 </table>
             </div>
-
         </td>
         <td class="menu-column">
-            <table class="menu">
-                <tr>
-                    <td class="label dark-text">
-                        X
-                    </td>
-                    <td id="x-group" class="x-group light-text">
-                        <input type="radio" name="x" id="x-5" value="-5">
-                        <label for="x-5">-5</label>
+            <div class="menu">
+                <div class="label primary-text">X</div>
+                <div id="x-group" class="x-group primary-text">
+                    <input type="radio" name="x" id="x-5" value="-5">
+                    <label for="x-5">-5</label>
 
-                        <input type="radio" name="x" id="x-4" value="-4">
-                        <label for="x-4">-4</label>
+                    <input type="radio" name="x" id="x-4" value="-4">
+                    <label for="x-4">-4</label>
 
-                        <input type="radio" name="x" id="x-3" value="-3">
-                        <label for="x-3">-3</label>
+                    <input type="radio" name="x" id="x-3" value="-3">
+                    <label for="x-3">-3</label>
 
-                        <input type="radio" name="x" id="x-2" value="-2">
-                        <label for="x-2">-2</label>
+                    <input type="radio" name="x" id="x-2" value="-2">
+                    <label for="x-2">-2</label>
 
-                        <input type="radio" name="x" id="x-1" value="-1">
-                        <label for="x-1">-1</label>
+                    <input type="radio" name="x" id="x-1" value="-1">
+                    <label for="x-1">-1</label>
 
-                        <input type="radio" name="x" id="x0" value="0" checked>
-                        <label for="x0">0</label>
+                    <input type="radio" name="x" id="x0" value="0" checked>
+                    <label for="x0">0</label>
 
-                        <input type="radio" name="x" id="x1" value="1">
-                        <label for="x1">1</label>
+                    <input type="radio" name="x" id="x1" value="1">
+                    <label for="x1">1</label>
 
-                        <input type="radio" name="x" id="x2" value="2">
-                        <label for="x2">2</label>
+                    <input type="radio" name="x" id="x2" value="2">
+                    <label for="x2">2</label>
 
-                        <input type="radio" name="x" id="x3" value="3">
-                        <label for="x3">3</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div id="tooltip" class="tooltip">
-                            Это подсказка для текстового поля
-                        </div>
-                    </td>
-                    <td class="label dark-text">
-                        Y
-                    </td>
-                    <td id="y-group" class="y-group">
-                        <input type="text" id="y" name="y" value="0">
-                        <label for="y"></label>
-                    </td>
-                </tr>
-                <tr>
-                    <td id="b-group" class="b-group">
-                        <button type="submit" id="submit">Отправить</button>
-                    </td>
-                </tr>
-            </table>
+                    <input type="radio" name="x" id="x3" value="3">
+                    <label for="x3">3</label>
+                </div>
+
+                <div id="tooltip" class="tooltip">
+                    Это подсказка для текстового поля
+                </div>
+
+                <div class="label primary-text">Y</div>
+                <div id="y-group" class="y-group">
+                    <input type="text" id="y" name="y" value="0" maxlength="7">
+                    <label for="y"></label>
+                </div>
+
+                <div id="b-group" class="b-group">
+                    <button type="submit" id="submit">Отправить</button>
+                </div>
+            </div>
         </td>
     </tr>
-
 </table>
 
 <script src="js/graphics.js"></script>
+<script src="js/canvas-controller.js"></script>
+
+<script src="js/interactiveObjects/interactive-object.js"></script>
+<script src="js/interactiveObjects/grid.js"></script>
+<script src="js/interactiveObjects/axis.js"></script>
+<script src="js/interactiveObjects/zones/rectangle-zone.js"></script>
+<script src="js/interactiveObjects/zones/sector-zone.js"></script>
+<script src="js/interactiveObjects/zones/triangle-zone.js"></script>
+<script src="js/interactiveObjects/label.js"></script>
+
 <script src="js/plane.js"></script>
 <script src="js/main.js"></script>
 <script src="js/menu.js"></script>

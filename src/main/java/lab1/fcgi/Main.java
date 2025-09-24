@@ -29,6 +29,10 @@ public class Main {
 
                     if (!checkRange(r, 0d, Double.MAX_VALUE)) {
                         throw new ServerException(StatusCode.BAD_REQUEST, "Значение r должно быть больше или равно 0!");
+                    } else if (!checkRange(y, -5d, 3d)){
+                        throw new ServerException(StatusCode.BAD_REQUEST, "Значение y должно быть в диапазоне -5 ... 3");
+                    } else if (!checkRange(x, -5d, 3d)){
+                        throw new ServerException(StatusCode.BAD_REQUEST, "Значение x должно быть в диапазоне -5 ... 3");
                     }
 
                     Long startTime = System.nanoTime();

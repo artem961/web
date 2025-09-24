@@ -29,21 +29,16 @@ class Point extends GeometricShape{
 }
 
 class Sector extends GeometricShape{
-    constructor(position, radius, startAngle, endAngle) {
+    constructor(position, radius) {
         super();
         this.position = position;
         this.radius = radius;
-        this.startAngle = startAngle;
-        this.endAngle = endAngle;
     }
 
-    draw(ctx) {
+    draw(ctx, startAngle, endAngle) {
         let position = this.position.convert(ctx.canvas);
 
-        ctx.beginPath();
-        ctx.moveTo(position.x, position.y);
-        ctx.arc(position.x, position.y, this.radius, -this.endAngle, -this.startAngle);
-        ctx.closePath();
+        ctx.arc(position.x, position.y, this.radius, startAngle, endAngle);
         ctx.fill();
     }
 }
@@ -69,7 +64,7 @@ class Line extends GeometricShape{
         this.positionTo = positionTo;
     }
 
-    draw(ctx) {
+    draw(ctx, scale) {
         let from = this.positionFrom.convert(ctx.canvas);
         let to = this.positionTo.convert(ctx.canvas);
 
@@ -100,6 +95,7 @@ class Polygon extends GeometricShape{
         ctx.closePath();
     }
 }
+
 
 
 

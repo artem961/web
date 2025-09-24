@@ -17,7 +17,7 @@ public class Validator {
     }
 
     public static boolean checkRange(Double value, Double min, Double max) {
-        return value >= min && value <= max;
+        return value >= min & value <= max;
     }
 
     public static Double parseNumber(String number) {

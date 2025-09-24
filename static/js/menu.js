@@ -1,22 +1,3 @@
-let elements = document.getElementsByName('r');
-
-for (const el of elements) {
-    el.addEventListener('click', () => {
-        if (el.checked) {
-            for (const element of elements) {
-                if (element !== el) {
-                    element.checked = false;
-                }
-            }
-
-            const canvas = document.getElementById('canvas');
-            drawPlane(canvas, el.value);
-        } else {
-            el.checked = true;
-        }
-    })
-}
-
 let submitButton = document.getElementById('submit');
 submitButton.addEventListener('click', () => {
     let x = document.querySelector('input[name="x"]:checked').value;
@@ -25,6 +6,8 @@ submitButton.addEventListener('click', () => {
 
     if (!validateNumberInString(y)) {
         showTooltip("Введите целое или дробное число!");
+    } else if (!validateRange(y, -5, 3)){
+        showTooltip("Диапазон значений y -5 ... 3");
     } else {
         let json = sendRequest(x, y, r);
 
@@ -39,9 +22,12 @@ submitButton.addEventListener('click', () => {
 });
 
 function validateNumberInString(string) {
-    return /^[0-9]+([.][0-9]+)?$/.test(string);
+    return /^-?[0-9]+([.][0-9]+)?$/.test(string);
 }
 
+function validateRange(n, min, max) {
+    return +n >= min & +n <= max;
+}
 
 function showTooltip(text) {
     const tooltip = document.getElementById('tooltip');
@@ -56,7 +42,8 @@ function showTooltip(text) {
 }
 
 async function sendRequest(x, y, r) {
-    const api = 'http://localhost:8080/fcgi-bin/server.jar';
+    //const api = 'http://localhost:8080/fcgi-bin/server.jar';
+    const api = 'http://localhost:8080';
     let response = await fetch(`${api}/calc?x=${x}&y=${y}&r=${r}`);
 
     if (response.ok) {
@@ -80,7 +67,8 @@ function addTableRow(data) {
     addCell(row, x);
     addCell(row, y);
     addCell(row, r);
-    addCell(row, res);
+    let resCell = addCell(row, res);
+    resCell.setAttribute('data-result', res);
     addCell(row, time);
     addCell(row, currentTime);
 }
@@ -88,5 +76,6 @@ function addTableRow(data) {
 function addCell(row, value) {
     const newCell = row.insertCell();
     const newText = document.createTextNode(value);
-    newCell.appendChild(newText);
+    newCell.appendChild(newText)
+    return newCell;
 }

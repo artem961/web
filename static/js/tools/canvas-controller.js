@@ -70,6 +70,18 @@ class CanvasController {
         this.objects.push(interactiveObject);
     }
 
+    addObjects(objects) {
+        objects.forEach(object => {this.addObject(object);});
+    }
+
+    removeObject(interactiveObject) {
+        this.objects.splice(this.objects.indexOf(interactiveObject), 1);
+    }
+
+    removeObjects(objects) {
+        objects.forEach(object => {this.removeObject(object)});
+    }
+
     clearCanvas() {
         this.context.clearRect(0, 0, canvas.width, canvas.height);
     }
